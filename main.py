@@ -21,7 +21,6 @@ def determineFreq(words, yellowLetters, alpha):
                 # Weight letters that have been classified as present
                 if word[i] in yellowLetters:
                     freqs[word[i]][i] += 1000
-    print(freqs)
     return freqs
 
 
@@ -83,6 +82,8 @@ def main():
     numGuess = 0
     guess = determineGuess(words, freq, numGuess)
 
+    print("Num of Words:", len(words))
+
     while not solved and numGuess < 6:
         bodyElement.send_keys(guess)
         bodyElement.send_keys(Keys.ENTER)
@@ -91,7 +92,7 @@ def main():
 
         # see what happened with the guess
         screen = pyautogui.screenshot(region=(gameBoard.left, gameBoard.top, gameBoard.width, gameBoard.height))
-        screen.save(r"\test.png")
+        screen.save(r".\test.png")
 
 
         yellow = (181, 159, 59)
@@ -174,6 +175,7 @@ def main():
         guess = determineGuess(words, freq, numGuess)
 
         print("Guess:", guess)
+        print("Num of Words:", len(words))
         time.sleep(3)
 
     if solved:
