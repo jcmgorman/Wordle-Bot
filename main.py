@@ -91,8 +91,6 @@ def main():
 
         # see what happened with the guess
         screen = pyautogui.screenshot(region=(gameBoard.left, gameBoard.top, gameBoard.width, gameBoard.height))
-        screen.save(r".\test.png")
-
 
         yellow = (181, 159, 59)
         green = (83, 141, 78)
