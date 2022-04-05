@@ -1,5 +1,4 @@
 import pyautogui
-import png
 import time
 import random
 from selenium import webdriver
