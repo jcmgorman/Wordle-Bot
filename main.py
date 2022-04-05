@@ -72,7 +72,6 @@ def main():
     time.sleep(5)
 
     # find where the board is on the screen
-    r = png.Reader("Wordle Board.png")
     gameBoard = pyautogui.locateOnScreen("Wordle Board.png", confidence=0.8)
     time.sleep(3)
 
@@ -92,7 +91,7 @@ def main():
 
         # see what happened with the guess
         screen = pyautogui.screenshot(region=(gameBoard.left, gameBoard.top, gameBoard.width, gameBoard.height))
-        screen.save(r"C:\Users\Jonathan Gorman\Desktop\Python Bot Projects\Wordle Bot\test.png")
+        screen.save(r"\test.png")
 
 
         yellow = (181, 159, 59)
